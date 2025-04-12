@@ -43,9 +43,9 @@ class Auth extends Controller
     {
         switch ($role) {
             case 'Admin':
-                return redirect()->to(site_url('dashboard/admin_dashboard'));
+                return redirect()->to(site_url('admin/admin_dashboard'));
             case 'User':
-                return redirect()->to(site_url('dashboard/user_dashboard'));
+                return redirect()->to(site_url('user/user_dashboard'));
             default:
                 return redirect()->to(site_url('auth/login'))->with('error', 'Role tidak dikenali');
         }
