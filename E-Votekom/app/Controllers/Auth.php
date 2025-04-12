@@ -24,7 +24,13 @@ class Auth extends Controller
                 session()->set('username', $user['username']);
                 session()->set('role', $user['role']);
 
-                return redirect()->to('/dashboard'); // Ganti dengan URL yang sesuai
+                // Redirect berdasarkan role
+                switch ($user['role']) {
+                    case 'admin':
+                        return redirect()->to('Dashboard/admin_dashboard');
+                    case 'user':
+                        return redirect()->to('Dashboard/user_dashboard');
+                }
             } else {
                 return redirect()->back()->with('error', 'Username atau password salah');
             }
@@ -36,6 +42,6 @@ class Auth extends Controller
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login'); // Ganti dengan URL login Anda
+        return redirect()->to('Auth/login.html'); // Ganti dengan URL login Anda
     }
 }
