@@ -9,7 +9,7 @@ class Auth extends Controller
 {
     public function login()
     {
-        // Jika request adalah POST
+        // Cek apakah form dikirim via POST
         if ($this->request->getMethod() === 'post') {
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
@@ -17,13 +17,14 @@ class Auth extends Controller
             $userModel = new UserModel();
             $user = $userModel->where('username', $username)->first();
 
+            // Cek apakah user ditemukan dan password cocok
             if ($user && password_verify($password, $user['password'])) {
-                // Set session
+                // Set session user
                 session()->set([
-                    'user_id' => $user['user_id'],
-                    'username' => $user['username'],
-                    'role' => $user['role'],
-                    'isLoggedIn' => true
+                    'user_id'     => $user['user_id'],
+                    'username'    => $user['username'],
+                    'role'        => $user['role'],
+                    'isLoggedIn'  => true,
                 ]);
 
                 // Redirect berdasarkan role
@@ -34,7 +35,8 @@ class Auth extends Controller
             return redirect()->back()->withInput()->with('error', 'Username atau password salah');
         }
 
-        return view('Auth/login'); // Pastikan file ini ada di app/Views/Auth/login.php
+        // Tampilkan view login (pakai login.php, bukan login.html)
+        return view('Auth/login');
     }
 
     private function redirectBasedOnRole($role)
@@ -51,7 +53,10 @@ class Auth extends Controller
 
     public function logout()
     {
+        // Hapus semua session
         session()->destroy();
+
+        // Redirect ke halaman login
         return redirect()->to(site_url('auth/login'));
     }
 }
