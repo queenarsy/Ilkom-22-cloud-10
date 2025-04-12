@@ -13,7 +13,7 @@
     <h4>Connect Together</h4>
 
     <div class="wrapper">
-        <form action="/auth/login" method="post"> <!-- Ganti dengan URL yang sesuai -->
+        <form action="auth/login" method="post"> <!-- Ganti dengan URL yang sesuai -->
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" name="username" placeholder="Masukkan NIM" required> <!-- Ganti type menjadi text -->

@@ -10,6 +10,8 @@ class UserModel extends Model
     protected $primaryKey = 'user_id';
     protected $allowedFields = ['username', 'password', 'email', 'role'];
 
-    // Jika Anda ingin menggunakan hashing untuk password
-    protected $useTimestamps = true;
+    public function get_user_by_username($username)
+{
+    return $this->where('username', $username)->first();
+}
 }
