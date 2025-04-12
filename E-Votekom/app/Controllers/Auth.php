@@ -30,7 +30,7 @@ class Auth extends Controller
             }
         }
 
-        return view('auth/login'); // Ganti dengan view login Anda
+        return view('Auth/login.html'); // Ganti dengan view login Anda
     }
 
     public function logout()
