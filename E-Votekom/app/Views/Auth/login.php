@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Resmi Kota Kendari</title>
-    <link rel="stylesheet" href="stylelgn.css">
+    <link rel="stylesheet" href="<?= base_url('CSS/stylelgn.css'); ?>">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <img src="Evotkom.png" alt="Gambar Samping Login" class="login-image">
-    <h3>Evotekom</h3>
+    <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Gambar Samping Login" class="login-image">
     <h4>Connect Together</h4>
 
     <div class="wrapper">
