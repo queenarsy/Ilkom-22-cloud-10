@@ -17,31 +17,41 @@ class Auth extends Controller
             $userModel = new UserModel();
             $user = $userModel->where('username', $username)->first();
 
-            // Cek apakah user ditemukan dan password cocok
             if ($user && password_verify($password, $user['password'])) {
-                // Set session atau token di sini
-                session()->set('user_id', $user['user_id']);
-                session()->set('username', $user['username']);
-                session()->set('role', $user['role']);
+                // Set session
+                session()->set([
+                    'user_id' => $user['user_id'],
+                    'username' => $user['username'],
+                    'role' => $user['role'],
+                    'isLoggedIn' => true
+                ]);
 
                 // Redirect berdasarkan role
-                switch ($user['role']) {
-                    case 'admin':
-                        return redirect()->to('Dashboard/admin_dashboard');
-                    case 'user':
-                        return redirect()->to('Dashboard/user_dashboard');
-                }
-            } else {
-                return redirect()->back()->with('error', 'Username atau password salah');
+                return $this->redirectBasedOnRole(strtolower($user['role']));
             }
+
+            // Jika gagal login
+            return redirect()->back()->withInput()->with('error', 'Username atau password salah');
         }
 
-        return view('Auth/login.html'); // Ganti dengan view login Anda
+        return view('Auth/login'); // Pastikan file ini ada di app/Views/Auth/login.php
+    }
+
+    private function redirectBasedOnRole($role)
+    {
+        switch ($role) {
+            case 'Admin':
+                return redirect()->to(site_url('dashboard/admin_dashboard'));
+            case 'User':
+                return redirect()->to(site_url('dashboard/user_dashboard'));
+            default:
+                return redirect()->to(site_url('auth/login'))->with('error', 'Role tidak dikenali');
+        }
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('Auth/login.html'); // Ganti dengan URL login Anda
+        return redirect()->to(site_url('auth/login'));
     }
 }
