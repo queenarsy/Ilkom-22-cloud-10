@@ -11,8 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: url("mtq.jpg") no-repeat ;
+    min-height: 100vh; 
     background-position: center;
     background-size: 100%;
     background-size: cover;
