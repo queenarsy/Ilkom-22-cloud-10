@@ -10,5 +10,5 @@ $routes->get('auth/login', 'Auth::login');
 $routes->post('auth/login', 'Auth::login');
 $routes->get('logout', 'Auth::logout');
 
-$routes->get('admin/admin_dashboard', 'admin::admin_dashboard'); // Route untuk admin dashboard
-$routes->get('user/user_dashboard', 'user::user_dashboard'); // Route untuk user dashboard
+$routes->get('admin/admin_dashboard', 'Dashboard::admin_dashboard'); // Route untuk admin dashboard
+$routes->get('user/user_dashboard', 'Dashboard::user_dashboard'); // Route untuk user dashboard
