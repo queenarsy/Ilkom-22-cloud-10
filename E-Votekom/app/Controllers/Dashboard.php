@@ -14,7 +14,7 @@ class Dashboard extends Controller
         }
 
         // Logika untuk menampilkan dashboard admin
-        return view('admin/admin_dashboard'); // Ganti dengan view dashboard admin Anda
+        return view('admin/index'); // Ganti dengan view dashboard admin Anda
     }
 
     public function user_dashboard()
@@ -25,6 +25,6 @@ class Dashboard extends Controller
         }
 
         // Logika untuk menampilkan dashboard user
-        return view('user/user_dashboard'); // Ganti dengan view dashboard user Anda
+        return view('user/index'); // Ganti dengan view dashboard user Anda
     }
 }
