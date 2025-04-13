@@ -17,8 +17,13 @@ class Auth extends Controller
             $userModel = new UserModel();
             $user = $userModel->where('username', $username)->first();
 
-            // Cek apakah user ditemukan dan password cocok
-            if ($user && password_verify($password, $user['password'])) {
+            // Cek apakah user ditemukan
+            if (!$user) {
+                return redirect()->back()->withInput()->with('error', 'Username tidak ditemukan');
+            }
+
+            // Cek apakah password cocok
+            if ($user && $password === $user['password']) {
                 // Set session user
                 session()->set([
                     'user_id'     => $user['user_id'],
@@ -35,20 +40,22 @@ class Auth extends Controller
             return redirect()->back()->withInput()->with('error', 'Username atau password salah');
         }
 
-        // Tampilkan view login (pakai login.php, bukan login.html)
+        // Tampilkan view login
         return view('Auth/login');
     }
 
     private function redirectBasedOnRole($role)
     {
+
         switch ($role) {
-            case 'Admin':
+            case 'admin':
                 return redirect()->to(site_url('admin/admin_dashboard'));
-            case 'User':
+            case 'user':
                 return redirect()->to(site_url('user/user_dashboard'));
             default:
                 return redirect()->to(site_url('auth/login'))->with('error', 'Role tidak dikenali');
         }
+
     }
 
     public function logout()
