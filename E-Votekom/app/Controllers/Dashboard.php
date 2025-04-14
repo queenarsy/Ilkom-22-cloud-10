@@ -9,7 +9,7 @@ class Dashboard extends Controller
     public function admin_dashboard()
     {
         // Check if the user is logged in and has the admin role
-        if (!session()->get('user_id') || session()->get('role') !== 'Admin') {
+        if (!session()->get('username') || session()->get('role') !== 'Admin') {
             return redirect()->to('auth/login'); // Redirect to login if not logged in or not an admin
         }
 
@@ -20,7 +20,7 @@ class Dashboard extends Controller
     public function user_dashboard()
     {
         // Check if the user is logged in and has the user role
-        if (!session()->get('user_id') || session()->get('role') !== 'User') {
+        if (!session()->get('username') || session()->get('role') !== 'User') {
             return redirect()->to('auth/login'); // Redirect to login if not logged in or not a user
         }
 
