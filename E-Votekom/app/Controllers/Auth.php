@@ -38,7 +38,7 @@ class Auth extends Controller
             } elseif (trim($user['role']) === 'User') { // Pastikan tidak ada spasi di sini
                 return redirect()->to('user/index');
             }else {
-                return redirect()->to('/login')->with('error', 'Role not recognized');
+                return redirect()->to('Login/login')->with('error', 'Role not recognized');
             }
         } else {
             log_message('debug', 'Invalid password for username: ' . $username);

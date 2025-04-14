@@ -8,6 +8,13 @@
 <body>
     <h2>Viewer Dashboard</h2>
     <p>Welcome, Viewer!</p>
+    
+    <!-- Tombol untuk menuju ke halaman polling -->
+    <a href="<?php echo base_url('polls/view'); ?>" style="text-decoration: none;">
+        <button style="padding: 10px 20px; font-size: 16px;">Go to Polls</button>
+    </a>
+
+    <br><br>
     <a href="Auth/logout">Logout</a>
 </body>
 </html>
