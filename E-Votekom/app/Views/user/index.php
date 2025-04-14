@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ini halaman pengguna</title>
+    <title>Viewer Dashboard</title>
 </head>
 <body>
-    
+    <h2>Viewer Dashboard</h2>
+    <p>Welcome, Viewer!</p>
+    <a href="Auth/logout">Logout</a>
 </body>
 </html>

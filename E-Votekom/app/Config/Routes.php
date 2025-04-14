@@ -5,10 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Auth::login');
-$routes->get('auth/login', 'Auth::login');
-$routes->post('auth/login', 'Auth::login');
-$routes->get('logout', 'Auth::logout');
-
-$routes->get('admin/index', 'Dashboard::admin_dashboard'); // Route untuk admin dashboard
-$routes->get('user/index', 'Dashboard::user_dashboard'); // Route untuk user dashboard
+ $routes->get('/', 'Home::index');
+ $routes->get('/login', 'Auth::login');
+ $routes->post('/auth/loginProcess', 'Auth::loginProcess');
+ $routes->get('/auth/logout', 'Auth::logout');
+ $routes->get('/register', 'Auth::register');
+ $routes->post('/auth/registerProcess', 'Auth::registerProcess');
+ $routes->get('/admin/index', 'Admin::index');
+ $routes->get('/user/index', 'User::index');
+ 
+ $routes->get('/admin/auth/logout', 'Admin\Auth::logout');
