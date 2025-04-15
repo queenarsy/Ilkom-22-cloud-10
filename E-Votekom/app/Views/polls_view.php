@@ -16,7 +16,7 @@
                         <?php foreach ($poll['candidates'] as $candidate): ?>
                             <div>
                                 <input type="radio" name="candidate_id" value="<?php echo $candidate['id']; ?>" required>
-                                <label><?php echo $candidate['name']; ?></label>
+                                <label><?php echo $candidate['nama']; ?></label>
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>

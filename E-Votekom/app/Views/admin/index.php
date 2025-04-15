@@ -52,6 +52,10 @@
         <button>Create Candidate</button>
     </a>
 
+    <a href="<?php echo base_url('candidates/index'); ?>">
+        <button>View Candidates</button>
+    </a>
+
     <br><br>
     <a href="<?php echo base_url('Auth/logout'); ?>">Logout</a>
 </body>

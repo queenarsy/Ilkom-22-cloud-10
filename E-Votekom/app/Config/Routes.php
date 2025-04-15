@@ -20,6 +20,7 @@ $routes->post('candidates/store', 'CandidateController::store');
 $routes->get('candidates/create', 'CandidateController::create');
 $routes->get('candidates', 'CandidateController::index');
 $routes->post('candidates/vote/(:num)', 'CandidateController::vote/$1');
+
  
  $routes->get('admin/Auth/logout', 'Auth::logout');
  $routes->get('user/Auth/logout', 'Auth::logout');

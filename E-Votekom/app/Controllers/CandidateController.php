@@ -21,7 +21,7 @@ class CandidateController extends BaseController
     {
         $model = new CandidateModel();
         $data = [
-            'name' => $this->request->getPost('name'),
+            'nama' => $this->request->getPost('nama'),
             'bio' => $this->request->getPost('bio'),
             'votes' => 0 // Inisialisasi suara dengan 0
         ];
