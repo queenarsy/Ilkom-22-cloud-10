@@ -14,5 +14,13 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/admin/index', 'Admin::index');
  $routes->get('/user/index', 'User::index');
  $routes->get('polls/view', 'PollController::viewPolls');
+ $routes->get('polls/create', 'PollController::create');
+$routes->post('polls/store', 'PollController::store');
+$routes->post('candidates/store', 'CandidateController::store');
+$routes->get('candidates/create', 'CandidateController::create');
+$routes->get('candidates', 'CandidateController::index');
+$routes->post('candidates/vote/(:num)', 'CandidateController::vote/$1');
  
- $routes->get('/admin/auth/logout', 'Admin\Auth::logout');
+ $routes->get('admin/Auth/logout', 'Auth::logout');
+ $routes->get('user/Auth/logout', 'Auth::logout');
+ $routes->get('Login/login', 'Home::index');
