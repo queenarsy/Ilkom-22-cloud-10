@@ -8,7 +8,7 @@ class CandidateModel extends Model
 {
     protected $table = 'kadidat';
     protected $primaryKey = 'kadidat_id';
-    protected $allowedFields = ['poll_id', 'nama', 'vote'];
+    protected $allowedFields = ['poll_id', 'bio','nama', 'vote'];
 
     public function getKadidat($pollId)
     {

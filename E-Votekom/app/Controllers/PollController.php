@@ -60,6 +60,21 @@ class PollController extends ResourceController
             return $this->respond(['message' => 'Vote recorded']);
         }
 
+        public function create()
+        {
+            return view('admin/create_poll');
+        }
+
+        public function store()
+        {
+            $question = $this->request->getPost('question');
+
+            // Simpan polling ke database
+            $this->pollModel->insert(['question' => $question]);
+
+            return redirect()->to(base_url('polls/view'));
+        }
+
         public function viewPolls()
         {
             $polls = $this->pollModel->getPolls();
