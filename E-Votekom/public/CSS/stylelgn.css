@@ -58,7 +58,7 @@ h4 {
     border: 2px solid rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: #fff;
+    color: #000000;
     position: relative;
     border-radius: 10px;
     padding: 30px 40px;
@@ -87,11 +87,11 @@ h4 {
     border-radius: 40px;
     font-size: 16px;
     padding: 0px 0px 0px 20px;
-    color: aliceblue;
+    color: rgb(12, 13, 14);
 }
 
 .input-box input::placeholder {
-    color: #fff;
+    color: #060505;
 }
 
 .input-box i {
@@ -100,34 +100,15 @@ h4 {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    color: #fff;
+    color: #000000;
 }
 
 /* Menyesuaikan warna ikon mata menjadi putih */
 .input-box input[type="password"] + .bx {
-    color: #fff;
+    color: #000000;
 }
 
-.remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px0;
-}
 
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 3px;
-}
-
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover{
-    text-decoration : underline;
-}
 
 .btn {
     margin-top: 10px;
@@ -143,20 +124,3 @@ h4 {
     color: #fff;
     font-weight: 600;
 }
-
-.register-link {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 20px;
-}
-
-.register-link p a {
-    color: #060af6;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover {
-    text-decoration: underline;
-}
-
