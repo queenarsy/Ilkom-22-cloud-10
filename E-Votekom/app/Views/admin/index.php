@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viewer Dashboard</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('CSS/dasboard.css'); ?>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>admin Dashboard</title>
+
 </head>
 <body>
 

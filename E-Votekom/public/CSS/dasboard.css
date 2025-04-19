@@ -69,3 +69,14 @@ a.logout {
 a.logout:hover {
     background-color: #c82333;
 }
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.logo {
+    width: 10px;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
