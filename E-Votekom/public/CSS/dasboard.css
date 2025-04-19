@@ -71,12 +71,15 @@ a.logout:hover {
 }
 
 .logo-container {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-bottom: 1px;
+    z-index: 10;
 }
 
 .logo {
-    width: 10px;
+    width: 250px;
     height: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
