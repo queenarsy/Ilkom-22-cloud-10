@@ -12,14 +12,15 @@
 </head>
 <body>
 
-    <div class="dashboard-wrapper">
-        <!-- Tambahkan logo di atas -->
-        <div class="logo-container">
-            <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Logo" class="logo">
-        </div>
+    <!-- Logo di tengah atas -->
+    <div class="logo-container">
+        <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Logo" class="logo">
+    </div>
 
-        <h2>Viewer Dashboard</h2>
-        <p>Welcome, Viewer!</p>
+    <!-- Dashboard wrapper -->
+    <div class="dashboard-wrapper">
+        <h2>admin</h2>
+        <p>Halo</p>
 
         <a href="<?= base_url('polls/view'); ?>" class="btn">Go to Polls</a>
         <a href="<?= base_url('candidates/create'); ?>" class="btn">Create Candidate</a>
@@ -29,3 +30,4 @@
 
 </body>
 </html>
+
