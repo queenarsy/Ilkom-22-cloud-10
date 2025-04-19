@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('CSS/dasboard.css'); ?>">
+    <title>Viewer Dashboard</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>admin Dashboard</title>
-
 </head>
 <body>
 
     <div class="dashboard-wrapper">
+        <!-- Tambahkan logo di atas -->
+        <div class="logo-container">
+            <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Logo" class="logo">
+        </div>
+
         <h2>Viewer Dashboard</h2>
         <p>Welcome, Viewer!</p>
 
