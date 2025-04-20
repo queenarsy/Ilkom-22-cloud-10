@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Kandidat</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/daftar_kandidat.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('CSS/d_candidate.css'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
