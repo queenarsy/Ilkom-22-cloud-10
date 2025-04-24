@@ -9,12 +9,11 @@
     <h2>Viewer Dashboard</h2>
     <p>Welcome, Viewer!</p>
     
-    <!-- Tombol untuk menuju ke halaman polling -->
-    <a href="<?php echo base_url('polls/view'); ?>" style="text-decoration: none;">
-        <button style="padding: 10px 20px; font-size: 16px;">Go to Polls</button>
-    </a>
+    <div class="dashboard-wrapper">
 
-    <br><br>
-    <a href="Auth/logout">Logout</a>
+        <a href="<?= base_url('polls/view'); ?>" class="btn">Go to Polls</a>
+        <a href="<?= base_url('user/candidates_view'); ?>" class="btn">View Candidates</a>
+        <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a>
+    </div>
 </body>
 </html>

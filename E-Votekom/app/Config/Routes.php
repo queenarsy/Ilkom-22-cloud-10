@@ -18,10 +18,10 @@ use CodeIgniter\Router\RouteCollection;
 $routes->post('polls/store', 'PollController::store');
 $routes->post('candidates/store', 'CandidateController::store');
 $routes->get('candidates/create', 'CandidateController::create');
-$routes->get('candidates', 'CandidateController::index');
+$routes->get('candidates/index', 'CandidateController::index');
 $routes->post('candidates/vote/(:num)', 'CandidateController::vote/$1');
+$routes->get('user/candidates_view', 'User::candidatesView');
 
  
- $routes->get('admin/Auth/logout', 'Auth::logout');
- $routes->get('user/Auth/logout', 'Auth::logout');
+ $routes->get('Auth/logout', 'Auth::logout');
  $routes->get('Login/login', 'Home::index');

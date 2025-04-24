@@ -8,7 +8,7 @@ class VoteModel extends Model
 {
     protected $table = 'vote';
     protected $primaryKey = 'vote_id';
-    protected $allowedFields = ['user_id', 'kadidat_id'];
+    protected $allowedFields = ['user_id', 'kadidat_id', 'vote_type'];
 
     public function getVoteByUser ($userId)
     {
