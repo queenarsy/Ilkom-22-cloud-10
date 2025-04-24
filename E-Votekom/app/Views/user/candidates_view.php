@@ -12,7 +12,7 @@
 
     <!-- Logo kiri atas -->
     <div class="logo-container">
-        <img src="<?= base_url('image/logo.png'); ?>" alt="Logo" class="logo">
+        <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Logo" class="logo">
     </div>
 
     <div class="wrapper">
