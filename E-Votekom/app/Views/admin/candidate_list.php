@@ -2,45 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate List</title>
-    <link rel="stylesheet" href="<?= base_url('CSS/l_candidate.css'); ?>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
-    <!-- Logo kiri atas -->
-    <div class="logo-container">
-        <img src="<?= base_url('image/logo.png'); ?>" alt="Logo" class="logo">
-    </div>
+<h1>Candidate List</h1>
 
-    <div class="wrapper">
-        <h1>Candidate List</h1>
+<a href="<?= base_url('candidates/create') ?>">Create New Candidate</a>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Biography</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($candidates as $candidate): ?>
-                    <tr>
-                        <td><?= esc($candidate['nama']); ?></td>
-                        <td><?= esc($candidate['bio']); ?></td>
-                        <td><?= esc($candidate['vote']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+<?php if(session()->getFlashdata('success')): ?>
+    <p><?= session()->getFlashdata('success') ?></p>
+<?php endif; ?>
 
-        <div class="create-link">
-            <a href="<?= base_url('candidates/create'); ?>">+ Create Candidate</a>
-        </div>
-    </div>
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Vote</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($candidates as $candidate): ?>
+        <tr>
+            <td><img src="<?= base_url('uploads/' . $candidate['photo']) ?>" width="100"></td>
+            <td><?= esc($candidate['nama']) ?></td>
+            <td><?= esc($candidate['bio']) ?></td>
+            <td><?= esc($candidate['vote']) ?></td>
+            <td>
+                <a href="<?= base_url('candidates/edit/' . $candidate['kadidat_id']) ?>">Edit</a> |
+                <form action="<?= base_url('candidates/delete/' . $candidate['kadidat_id']) ?>" method="post" style="display:inline;">
+                    <?= csrf_field() ?>
+                    <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 
 </body>
 </html>
