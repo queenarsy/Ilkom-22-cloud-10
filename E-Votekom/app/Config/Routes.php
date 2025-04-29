@@ -25,3 +25,5 @@ $routes->get('user/candidates_view', 'User::candidatesView');
  
  $routes->get('Auth/logout', 'Auth::logout');
  $routes->get('Login/login', 'Home::index');
+ $routes->get('candidates/create', 'Candidates::create');
+$routes->post('candidates/store', 'Candidates::store');
