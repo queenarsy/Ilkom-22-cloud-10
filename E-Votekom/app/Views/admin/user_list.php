@@ -62,6 +62,7 @@
 
     <div class="top-actions">
         <a href="<?= base_url('create/user') ?>" class="btn">Create User</a>
+        <a href="<?= base_url('admin/index') ?>" class="btn">Kembali kehalaman Admin</a>
     </div>
 
     <table>
