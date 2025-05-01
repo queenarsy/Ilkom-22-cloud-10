@@ -22,9 +22,9 @@
         <h2>admin</h2>
         <p>Halo</p>
 
-        <a href="<?= base_url('polls/view'); ?>" class="btn">Go to Polls</a>
+        <a href="<?= base_url('User/user_list'); ?>" class="btn">Go User List</a>
         <a href="<?= base_url('Candidates/create'); ?>" class="btn">Create Candidate</a>
-        <a href="<?= base_url('Candidates/index'); ?>" class="btn">View Candidates</a>
+        <a href="<?= base_url('admin/candidate_list'); ?>" class="btn">View Candidates</a>
         <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a>
     </div>
 

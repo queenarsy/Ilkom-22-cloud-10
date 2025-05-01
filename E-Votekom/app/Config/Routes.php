@@ -8,15 +8,18 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/', 'Home::index');
  $routes->get('/login', 'Auth::login');
  $routes->post('/auth/loginProcess', 'Auth::loginProcess');
+ //buat create user
  $routes->get('/auth/logout', 'Auth::logout');
- $routes->get('/register', 'Auth::register');
+ $routes->get('create/user', 'Auth::register');
  $routes->post('/auth/registerProcess', 'Auth::registerProcess');
+
  $routes->get('/admin/index', 'Admin::index');
  $routes->get('/user/index', 'User::index');
  $routes->get('polls/view', 'PollController::viewPolls');
  $routes->get('polls/create', 'PollController::create');
 $routes->post('polls/store', 'PollController::store');
 
+$routes->get('User/user_list', 'Auth::userList');
 
 // Candidate routes
 $routes->get('Candidates/create', 'CandidateController::create');
@@ -34,6 +37,12 @@ $routes->get('candidates/edit/(:num)', 'CandidateController::edit/$1');
 $routes->post('candidates/update/(:num)', 'CandidateController::update/$1');
 $routes->post('candidates/delete/(:num)', 'CandidateController::delete/$1');
 
+
+//this for user update and delete
+
+$routes->get('users/edit/(:num)', 'Auth::edit/$1'); // Show form to edit a user
+$routes->post('users/update/(:num)', 'Auth::update/$1'); // Update a user
+$routes->post('users/delete/(:num)', 'Auth::delete/$1'); // Delete a user
  
  $routes->get('Auth/logout', 'Auth::logout');
  $routes->get('Login/login', 'Home::index');
