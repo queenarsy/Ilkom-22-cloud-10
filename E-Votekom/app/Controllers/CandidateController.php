@@ -28,7 +28,11 @@ class  CandidateController extends BaseController
     }
 
     public function candidateList(){
-        return view('admin/candidate_list');
+        $model = new CandidateModel();
+        $data['candidates'] = $model->findAll(); // Mengambil semua kandidat
+        // Debugging line
+        log_message('info', 'Index method called, candidates retrieved: ' . print_r($data['candidates'], true));
+        return view('admin/candidate_list', $data);
     }
 
     public function store()
@@ -55,7 +59,7 @@ class  CandidateController extends BaseController
             'vote' => 0
         ]);
 
-        return redirect()->to('candidates/index')->with('success', 'Candidate created successfully.');
+        return redirect()->to('admin/candidate_list')->with('success', 'Candidate created successfully.');
     }
 
     public function edit($id)
@@ -67,8 +71,8 @@ class  CandidateController extends BaseController
     public function update($id)
     {
         $data = [
-            'nama' => $this->request->getPost('name'),
-            'bio' => $this->request->getPost('description'),
+            'nama' => $this->request->getPost('nama'),
+            'bio' => $this->request->getPost('bio'),
         ];
 
         $photo = $this->request->getFile('photo');
