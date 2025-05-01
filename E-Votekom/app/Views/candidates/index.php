@@ -26,8 +26,8 @@
                     <tr>
                         <th>Nama</th>
                         <th>Biografi</th>
-                        <th>Suara</th>
-                        <th>Aksi</th>
+                        <th>photo</th>
+                        <th>Vote</th>
                     </tr>
                 </thead>
                 <tbody>

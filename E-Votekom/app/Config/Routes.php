@@ -25,6 +25,15 @@ $routes->get('Candidates/index', 'CandidateController::index');
 $routes->post('Candidates/vote/(:num)', 'Candidates::vote/$1');
 $routes->get('user/candidates_view', 'User ::candidatesView');
 $routes->get('admin/candidate_list', 'CandidateController::candidateList');
+
+//$routes->get('candidates/edit', 'CandidateController::edit');
+//$routes->post('candidates/update', 'CandidateController::update');
+//$routes->get('candidates/delete', 'CandidateController::delete'); // Assuming you want to use GET for delete
+
+$routes->get('candidates/edit/(:num)', 'CandidateController::edit/$1');
+$routes->post('candidates/update/(:num)', 'CandidateController::update/$1');
+$routes->post('candidates/delete/(:num)', 'CandidateController::delete/$1');
+
  
  $routes->get('Auth/logout', 'Auth::logout');
  $routes->get('Login/login', 'Home::index');

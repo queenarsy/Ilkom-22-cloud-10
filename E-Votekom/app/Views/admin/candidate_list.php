@@ -39,8 +39,8 @@
                 <td><?= esc($candidate['bio']) ?></td>
                 <td><?= esc($candidate['vote']) ?></td>
                 <td>
-                    <a href="<?= base_url('candidates/edit/' . $candidate['kadidat_id']) ?>">Edit</a> |
-                    <form action="<?= base_url('candidates/delete/' . $candidate['kadidat_id']) ?>" method="post" style="display:inline;">
+                <a href="<?= base_url('candidates/edit/' . $candidate['kadidat_id']) ?>">Edit</a>|
+                    <form action="<?= base_url('candidates/delete/' . $candidate['kadidat_id'] ) ?>" method="post" style="display:inline;">
                         <?= csrf_field() ?>
                         <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
                     </form>
