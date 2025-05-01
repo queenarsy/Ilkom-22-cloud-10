@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CandidateModel;
 
-class Candidates extends BaseController
+class  CandidateController extends BaseController
 {
     protected $candidateModel;
 
@@ -15,13 +15,16 @@ class Candidates extends BaseController
 
     public function index()
     {
-        $candidates = $this->candidateModel->findAll();
-        return view('candidates/index', ['candidates' => $candidates]);
+        $model = new CandidateModel();
+        $data['candidates'] = $model->findAll(); // Mengambil semua kandidat
+        // Debugging line
+        log_message('info', 'Index method called, candidates retrieved: ' . print_r($data['candidates'], true));
+        return view('candidates/index', $data); // Ganti dengan nama view yang sesuai
     }
 
-    public function create()
-    {
-        return view('candidates/create');
+
+    public function create(){
+        return view('admin\create_candidate.php');
     }
 
     public function store()

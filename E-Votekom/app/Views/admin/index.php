@@ -23,7 +23,7 @@
         <p>Halo</p>
 
         <a href="<?= base_url('polls/view'); ?>" class="btn">Go to Polls</a>
-        <a href="<?= base_url('candidates/create'); ?>" class="btn">Create Candidate</a>
+        <a href="<?= base_url('Candidates/create'); ?>" class="btn">Create Candidate</a>
         <a href="<?= base_url('candidates/index'); ?>" class="btn">View Candidates</a>
         <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a>
     </div>
