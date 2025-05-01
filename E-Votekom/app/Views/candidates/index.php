@@ -35,6 +35,7 @@
                     <tr>
                         <td><?= esc($candidate['nama']); ?></td>
                         <td><?= esc($candidate['bio']); ?></td>
+                        <td><?= esc($candidate['photo']); ?></td>
                         <td><?= esc($candidate['vote']); ?></td>
                         <td>
                             <form action="<?= base_url('candidates/vote/' . $candidate['kadidat_id']); ?>" method="post">

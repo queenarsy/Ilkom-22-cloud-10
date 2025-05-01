@@ -27,12 +27,16 @@ class  CandidateController extends BaseController
         return view('admin\create_candidate.php');
     }
 
+    public function candidateList(){
+        return view('admin/candidate_list');
+    }
+
     public function store()
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'name' => 'required',
-            'description' => 'required',
+            'nama' => 'required',
+            'bio' => 'required',
             'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]'
         ]);
 
@@ -45,13 +49,13 @@ class  CandidateController extends BaseController
         $photo->move('uploads/', $photoName);
 
         $this->candidateModel->save([
-            'nama' => $this->request->getPost('name'),
-            'bio' => $this->request->getPost('description'),
+            'nama' => $this->request->getPost('nama'),
+            'bio' => $this->request->getPost('bio'),
             'photo' => $photoName,
             'vote' => 0
         ]);
 
-        return redirect()->to('/candidates')->with('success', 'Candidate created successfully.');
+        return redirect()->to('candidates/index')->with('success', 'Candidate created successfully.');
     }
 
     public function edit($id)
