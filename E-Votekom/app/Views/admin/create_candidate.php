@@ -15,7 +15,7 @@
 <div class="form-wrapper">
     <h2>Create Candidate</h2>
 
-    <form action="<?= base_url('candidates/store') ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url('Candidates/store') ?>" method="post" enctype="multipart/form-data">
         <div class="input-group">
             <label for="name">Candidate Name</label>
             <input type="text" name="nama" id="nama" required>

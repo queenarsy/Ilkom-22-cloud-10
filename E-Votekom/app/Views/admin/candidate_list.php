@@ -8,7 +8,7 @@
 
 <h1>Candidate List</h1>
 
-<a href="<?= base_url('candidates/create') ?>">Create New Candidate</a>
+<a href="<?= base_url('Candidates/create') ?>">Create New Candidate</a>
 
 <?php if(session()->getFlashdata('success')): ?>
     <p><?= session()->getFlashdata('success') ?></p>
@@ -25,21 +25,33 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach($candidates as $candidate): ?>
+    <?php if (isset($candidates) && !empty($candidates)): ?>
+        <?php foreach($candidates as $candidate): ?>
+            <tr>
+                <td>
+                    <?php if (!empty($candidate['photo'])): ?>
+                        <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" width="100" alt="Candidate Photo">
+                    <?php else: ?>
+                        <img src="<?= base_url('uploads/default.png') ?>" width="100" alt="Default Photo"> <!-- Default image if no photo -->
+                    <?php endif; ?>
+                </td>
+                <td><?= esc($candidate['nama']) ?></td>
+                <td><?= esc($candidate['bio']) ?></td>
+                <td><?= esc($candidate['vote']) ?></td>
+                <td>
+                    <a href="<?= base_url('candidates/edit/' . $candidate['kadidat_id']) ?>">Edit</a> |
+                    <form action="<?= base_url('candidates/delete/' . $candidate['kadidat_id']) ?>" method="post" style="display:inline;">
+                        <?= csrf_field() ?>
+                        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
         <tr>
-            <td><img src="<?= base_url('uploads/' . $candidate['photo']) ?>" width="100"></td>
-            <td><?= esc($candidate['nama']) ?></td>
-            <td><?= esc($candidate['bio']) ?></td>
-            <td><?= esc($candidate['vote']) ?></td>
-            <td>
-                <a href="<?= base_url('candidates/edit/' . $candidate['kadidat_id']) ?>">Edit</a> |
-                <form action="<?= base_url('candidates/delete/' . $candidate['kadidat_id']) ?>" method="post" style="display:inline;">
-                    <?= csrf_field() ?>
-                    <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                </form>
-            </td>
+            <td colspan="5">No candidates found.</td>
         </tr>
-    <?php endforeach; ?>
+    <?php endif; ?>
     </tbody>
 </table>
 
