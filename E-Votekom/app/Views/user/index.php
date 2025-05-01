@@ -31,7 +31,12 @@
         <div class="candidates">
           <?php foreach ($candidates as $candidate): ?>
             <div class="candidate-card">
-              <img src="<?= base_url('assets/img/default.jpg') ?>" alt="<?= esc($candidate['nama']) ?>">
+            <td>
+                    <?php if (!empty($candidate['photo'])): ?>
+                        <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" width="100" alt="Candidate Photo">
+                    <?php else: ?>
+                        <img src="<?= base_url('uploads/default.png') ?>" width="100" alt="Default Photo"> <!-- Default image if no photo -->
+                    <?php endif; ?>
               <h3><?= esc($candidate['nama']) ?></h3>
               <form action="<?= base_url('candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
                 <button class="vote-btn" type="submit">Vote</button>
