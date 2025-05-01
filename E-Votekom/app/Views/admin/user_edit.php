@@ -98,7 +98,7 @@
         <select id="role" name="role" required>
             <?php
             // Define the enum role options here or pass from controller
-            $roles = ['admin',  'user']; // Example roles — replace with your enum values
+            $roles = ['Admin',  'User']; // Example roles — replace with your enum values
             foreach ($roles as $roleOption):
                 $selected = ($user['role'] === $roleOption) ? 'selected' : '';
             ?>
