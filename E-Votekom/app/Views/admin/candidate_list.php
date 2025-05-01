@@ -54,6 +54,9 @@
     <?php endif; ?>
     </tbody>
 </table>
+<div class="footer-link">
+            <a href="<?= base_url('admin/index'); ?>">← Kembali ke Admin</a>
+        </div>
 
 </body>
 </html>

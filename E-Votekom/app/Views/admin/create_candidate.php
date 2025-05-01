@@ -34,6 +34,9 @@
         <button type="submit" class="btn">Submit</button>
     </form>
 </div>
+<div class="footer-link">
+            <a href="<?= base_url('admin/index'); ?>">← Kembali ke Admin</a>
+        </div>
 
 </body>
 </html>
