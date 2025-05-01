@@ -7,6 +7,14 @@ use CodeIgniter\Controller;
 
 class Auth extends Controller
 {
+    protected $userModel;
+
+    public function __construct()
+    {
+        helper(['form', 'url']);
+        $this->userModel = new UserModel();  // Initialize model
+    }
+
     public function login()
     {
         return view('login');
@@ -54,7 +62,13 @@ class Auth extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('admin/create_user');
+    }
+
+    public function userList(){
+        $userModel = new UserModel();
+        $data['users'] = $userModel->findAll(); // Mengambil semua pengguna
+        return view('admin/user_list', $data); // Ganti dengan nama view yang sesuai
     }
 
     public function registerProcess()
@@ -79,6 +93,42 @@ class Auth extends Controller
             'role' => $role,
         ]);
 
-        return redirect()->to('Login/login')->with('success', 'Registration successful!');
+        return redirect()->to('User/user_list')->with('success', 'Registration successful!');
+    }
+
+    //For user update and delete
+    public function edit($id)
+    {
+        $userModel = new UserModel();
+        $data['user'] = $userModel->find($id); // Mengambil data pengguna berdasarkan ID
+        return view('admin/user_edit', $data); // Ganti dengan nama view yang sesuai
+    }
+    public function update($id)
+    {
+        $userModel = new UserModel();
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'email' => $this->request->getPost('email'),
+            'role' => $this->request->getPost('role'),
+        ];
+
+        // Update password only if it's provided
+        if ($this->request->getPost('password')) {
+            $data['password'] = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        }
+
+        $userModel->update($id, $data);
+        return redirect()->to('User/user_list')->with('success', 'User updated successfully!');
+    }
+
+    public function delete($id)
+    {
+        // Ensure $id is valid and then delete the user
+        if (!$id) {
+            return redirect()->to('User/user_list')->with('error', 'Invalid user ID.');
+        }
+    
+        $this->userModel->delete($id);
+        return redirect()->to('User/user_list')->with('success', 'User deleted successfully.');
     }
 }
