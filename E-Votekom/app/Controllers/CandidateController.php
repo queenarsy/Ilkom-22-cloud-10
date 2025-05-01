@@ -65,9 +65,17 @@ class  CandidateController extends BaseController
     public function edit($id)
     {
         $candidate = $this->candidateModel->find($id);
-        return view('candidates/edit', ['candidate' => $candidate]);
+        
+        if (!$candidate) {
+            session()->setFlashdata('error', 'Candidate not found.');
+            return redirect()->to('admin/candidate_list');
+        }
+
+        log_message('info', 'Edit method called, candidate retrieved: ' . print_r($candidate, true));
+        return view('admin/candidate_edit', ['candidate' => $candidate]);
     }
 
+    // Handle the form submission and update candidate data
     public function update($id)
     {
         $data = [
@@ -82,14 +90,15 @@ class  CandidateController extends BaseController
             $data['photo'] = $photoName;
         }
 
+        // Update the candidate with the given ID
         $this->candidateModel->update($id, $data);
 
-        return redirect()->to('/candidates')->with('success', 'Candidate updated successfully.');
+        return redirect()->to('admin/candidate_list')->with('success', 'Candidate updated successfully.');
     }
 
     public function delete($id)
     {
         $this->candidateModel->delete($id);
-        return redirect()->to('/candidates')->with('success', 'Candidate deleted successfully.');
+        return redirect()->to('admin/candidate_list')->with('success', 'Candidate deleted successfully.');
     }
 }
