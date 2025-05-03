@@ -35,7 +35,7 @@ class Auth extends Controller
 
         if (password_verify($password, $user['password'])) {
             session()->set('loggedIn', true);
-            session()->set('userId', $user['user_id']);
+            session()->set('user_id', $user['user_id']);
             session()->set('username', $user['username']);
             session()->set('role', trim($user['role']));
 

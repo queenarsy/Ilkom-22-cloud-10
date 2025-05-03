@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\VoteModel;
 use App\Models\CandidateModel;
 
 class  CandidateController extends BaseController
@@ -95,6 +95,55 @@ class  CandidateController extends BaseController
 
         return redirect()->to('admin/candidate_list')->with('success', 'Candidate updated successfully.');
     }
+    public function vote($id) {
+        $userId = session()->get('user_id');
+        log_message('debug', 'User  ID: ' . $userId); // Log the user ID for debugging
+    
+        if (!$userId) {
+            return redirect()->to('Login/login')->with('error', 'You must be logged in to vote.');
+        }
+    
+        // Check if the user has already voted for any candidate
+        $voteModel = new VoteModel();
+        $existingVote = $voteModel->where('user_id', $userId)->first();
+    
+        if ($existingVote) {
+            return redirect()->to('/user/index')->with('error', 'You have already voted. You cannot vote for another candidate.');
+        }
+    
+        // Proceed with the voting process
+        $voteType = 1; // Example: 1 for upvote
+        $model = new CandidateModel();
+        $candidate = $model->find($id);
+    
+        if ($candidate) {
+            // Increment the vote count for the candidate
+            $candidate['vote'] += 1; // Ensure you are updating the correct field
+            $model->update($id, $candidate);
+    
+            // Save the new vote to the votes table
+            $data = [
+                'user_id' => $userId,
+                'kadidat_id' => $id, // Ensure this is the correct column name
+                'vote_type' => $voteType,
+                'created_at' => date('Y-m-d H:i:s')
+            ];
+            $voteModel->insert($data);
+    
+            // Check user role
+            $session = session();
+            $userRole = $session->get('role'); // Assuming you store user role in session
+    
+            if ($userRole === 'Admin') {
+                return redirect()->to('candidates/index')->with('message', 'Vote successfully cast!');
+            } else {
+                return redirect()->to('/user/index')->with('message', 'Vote successfully cast!');
+            }
+        } else {
+            return redirect()->to('polls/view')->with('error', 'Candidate not found.');
+        }
+    }
+
 
     public function delete($id)
     {

@@ -19,6 +19,7 @@
       <li><a href="#visiMisi">Visi Misi Kandidat</a></li>
       <li><a href="#hasilVoting">Hasil Voting</a></li>
       <li><a href="#pengaturan">Pengaturan</a></li>
+      <li> <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a></li>
     </ul>
   </div>
 
@@ -38,7 +39,7 @@
                         <img src="<?= base_url('uploads/default.png') ?>" width="100" alt="Default Photo"> <!-- Default image if no photo -->
                     <?php endif; ?>
               <h3><?= esc($candidate['nama']) ?></h3>
-              <form action="<?= base_url('candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
+              <form action="<?= base_url('Candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
                 <button class="vote-btn" type="submit">Vote</button>
               </form>
             </div>
