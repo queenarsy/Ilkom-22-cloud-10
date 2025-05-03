@@ -25,7 +25,7 @@ $routes->get('User/user_list', 'Auth::userList');
 $routes->get('Candidates/create', 'CandidateController::create');
 $routes->post('Candidates/store', 'CandidateController::store');
 $routes->get('Candidates/index', 'CandidateController::index');
-$routes->post('Candidates/vote/(:num)', 'Candidates::vote/$1');
+$routes->post('Candidates/vote/(:num)', 'CandidateController::vote/$1');
 $routes->get('user/candidates_view', 'User ::candidatesView');
 $routes->get('admin/candidate_list', 'CandidateController::candidateList');
 
