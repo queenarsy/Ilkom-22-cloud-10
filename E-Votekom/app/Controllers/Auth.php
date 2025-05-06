@@ -41,9 +41,9 @@ class Auth extends Controller
 
             log_message('debug', 'User  role: ' . $user['role']);
 
-            if (trim($user['role']) === 'Admin') {
+            if (trim($user['role']) ==='Admin') {
                 return redirect()->to('admin/index');
-            } elseif (trim($user['role']) === 'User') { // Pastikan tidak ada spasi di sini
+            } elseif (trim($user['role']) ==='User') { // Pastikan tidak ada spasi di sini
                 return redirect()->to('user/index');
             }else {
                 return redirect()->to('Login/login')->with('error', 'Role not recognized');
