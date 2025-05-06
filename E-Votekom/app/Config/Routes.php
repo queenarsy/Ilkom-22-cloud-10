@@ -15,9 +15,7 @@ use CodeIgniter\Router\RouteCollection;
 
  $routes->get('/admin/index', 'Admin::index');
  $routes->get('/user/index', 'User::index');
- $routes->get('polls/view', 'PollController::viewPolls');
- $routes->get('polls/create', 'PollController::create');
-$routes->post('polls/store', 'PollController::store');
+
 
 $routes->get('User/user_list', 'Auth::userList');
 

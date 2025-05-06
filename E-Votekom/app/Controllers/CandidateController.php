@@ -137,10 +137,10 @@ class  CandidateController extends BaseController
             if ($userRole === 'Admin') {
                 return redirect()->to('candidates/index')->with('message', 'Vote successfully cast!');
             } else {
-                return redirect()->to('/user/index')->with('message', 'Vote successfully cast!');
+                return redirect()->to('candidates/indexx')->with('message', 'Vote successfully cast!');
             }
         } else {
-            return redirect()->to('polls/view')->with('error', 'Candidate not found.');
+            return redirect()->to('candidates/index')->with('error', 'Candidate not found.');
         }
     }
 
