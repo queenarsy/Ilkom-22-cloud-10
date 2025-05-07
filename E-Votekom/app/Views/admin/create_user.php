@@ -16,8 +16,8 @@
         <input type="email" name="email" placeholder="email" required>
         <select name="role" required>
             <option value="">Select Role</option>
-            <option value="admin">Admin</option>
-            <option value="editor">User</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
         </select>
         <button type="submit">Create</button>
     </form>
