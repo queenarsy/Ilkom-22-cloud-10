@@ -27,14 +27,16 @@
             <button type="submit" class="btn">Masuk</button>
 
             <!-- Tautan WhatsApp dengan ikon dan isi chat otomatis -->
-            <p style="text-align: center; margin-top: 20px;">
-                Belum terdaftar sebagai kandidat? Hubungi Admin via
-                <a href="https://wa.me/6281231284607?text=Halo%20Admin%2C%20saya%20ingin%20daftar%20kandidat" 
-                   target="_blank" 
-                   style="color: #25D366; font-weight: bold; text-decoration: none;">
-                    <i class="bi bi-whatsapp"></i> WhatsApp (0812-3128-4607)
-                </a>
-            </p>
+                    <p style="text-align: center; margin-top: 20px;">
+                    Belum terdaftar sebagai kandidat? Hubungi Admin via
+                    <br>
+                    <a href="https://wa.me/6281231284607?text=Halo%20Admin%2C%20saya%20ingin%20daftar%20kandidat" 
+                    target="_blank" 
+                    style="color: #25D366; font-weight: bold; text-decoration: none;">
+                        <i class="bi bi-whatsapp"></i> Admin kontak personal
+                    </a>
+                    </p>
+
         </form>
     </div>
 </body>
