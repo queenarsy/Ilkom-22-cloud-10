@@ -32,11 +32,13 @@
         </div>
 
         <button type="submit" class="btn">Submit</button>
+        <br></br>
+        <div class="bottom-actions">
+            <a href="<?= base_url('admin/index'); ?>" class="btn">← Kembali ke Admin</a>
+        </div>
     </form>
 </div>
-<div class="footer-link">
-            <a href="<?= base_url('admin/index'); ?>">← Kembali ke Admin</a>
-        </div>
+
 
 </body>
 </html>

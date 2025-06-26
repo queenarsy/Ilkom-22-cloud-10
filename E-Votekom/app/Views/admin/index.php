@@ -19,7 +19,7 @@
 
     <!-- Dashboard wrapper -->
     <div class="dashboard-wrapper">
-        <h2>admin</h2>
+        <h2>Admin</h2>
         <p>Halo</p>
 
         <a href="<?= base_url('User/user_list'); ?>" class="btn">Go User List</a>
