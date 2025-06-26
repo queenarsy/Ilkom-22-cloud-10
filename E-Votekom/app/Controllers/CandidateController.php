@@ -108,7 +108,8 @@ class  CandidateController extends BaseController
         $existingVote = $voteModel->where('user_id', $userId)->first();
     
         if ($existingVote) {
-            return redirect()->to('/user/index')->with('error', 'You have already voted. You cannot vote for another candidate.');
+            session()->setFlashdata('error', 'You have already voted. You cannot vote for another candidate.');
+            return redirect()->to('/user/index');
         }
     
         // Proceed with the voting process
@@ -135,9 +136,11 @@ class  CandidateController extends BaseController
             $userRole = $session->get('role'); // Assuming you store user role in session
     
             if ($userRole === 'Admin') {
-                return redirect()->to('candidates/index')->with('message', 'Vote successfully cast!');
+                session()->setFlashdata('message', 'Vote successfully cast!');
+                return redirect()->to('candidates/indexx');
             } else {
-                return redirect()->to('candidates/indexx')->with('message', 'Vote successfully cast!');
+                session()->setFlashdata('message', 'Vote successfully cast!');
+                return redirect()->to('candidates/indexx');
             }
         } else {
             return redirect()->to('candidates/index')->with('error', 'Candidate not found.');

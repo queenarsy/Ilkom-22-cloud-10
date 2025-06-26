@@ -17,6 +17,18 @@
 
     <div class="wrapper">
         <h1>Daftar Kandidat</h1>
+                <?php if (session()->getFlashdata('message')): ?>
+            <div class="alert success">
+                <?= session()->getFlashdata('message') ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert error">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
+
 
         <?php if (empty($candidates)): ?>
             <p class="no-candidates">Belum ada Kandidat.</p>

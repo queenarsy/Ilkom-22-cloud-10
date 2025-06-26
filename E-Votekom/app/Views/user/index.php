@@ -29,6 +29,18 @@
     <section id="kandidat" class="section">
       <div class="section-wrapper">
         <h1>Daftar Kandidat</h1>
+        <?php if (session()->getFlashdata('message')): ?>
+          <div class="alert success">
+            <?= session()->getFlashdata('message') ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if (session()->getFlashdata('error')): ?>
+          <div class="alert error">
+            <?= session()->getFlashdata('error') ?>
+          </div>
+        <?php endif; ?>
+
         <div class="candidates">
           <?php foreach ($candidates as $candidate): ?>
             <div class="candidate-card">
