@@ -46,3 +46,6 @@ $routes->post('users/delete/(:num)', 'Auth::delete/$1'); // Delete a user
  $routes->get('Login/login', 'Home::index');
 // $routes->get('candidates/create', 'Candidates::create');
 //$routes->post('candidates/store', 'Candidates::store');
+
+$routes->get('pengguna/profil', 'Pengguna::profil');
+$routes->post('pengguna/ubahPassword', 'Pengguna::ubahPassword');

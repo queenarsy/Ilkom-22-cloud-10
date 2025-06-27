@@ -18,7 +18,7 @@
       <li><a href="#kandidat">Kandidat</a></li>
       <li><a href="#visiMisi">Visi Misi Kandidat</a></li>
       <li><a href="#hasilVoting">Hasil Voting</a></li>
-      <li><a href="#pengaturan">Pengaturan</a></li>
+      <li><a href="<?= base_url('pengguna/profil'); ?>">Pengaturan</a></li>
       <li> <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a></li>
     </ul>
   </div>
