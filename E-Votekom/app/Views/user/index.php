@@ -89,8 +89,8 @@
     <!-- Pengaturan -->
     <section id="pengaturan" class="section">
       <div class="section-wrapper">
-        <h1>Pengaturan</h1>
-        <p>Atur konfigurasi sistem voting di sini.</p>
+        <h1>Terimakasih Telah Berpartisipasi</h1>
+        <p>Suara Anda Sangat Berharga Bagi Kami.</p>
       </div>
     </section>
 
