@@ -109,3 +109,11 @@ tr:hover {
 .footer-link a:hover {
     text-decoration: underline;
 }
+
+.candidate-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+

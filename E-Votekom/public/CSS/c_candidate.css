@@ -128,3 +128,10 @@ body {
     border: 1px solid #f5c6cb;
 }
 
+.candidate-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+

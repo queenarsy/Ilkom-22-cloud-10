@@ -34,28 +34,37 @@
             <p class="no-candidates">Belum ada Kandidat.</p>
         <?php else: ?>
             <table>
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Biografi</th>
-                        <th>Suara</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($candidates as $candidate): ?>
-                    <tr>
-                        <td><?= esc($candidate['nama']); ?></td>
-                        <td><?= esc($candidate['bio']); ?></td>
-                        <td><?= esc($candidate['vote']); ?></td>
-                        <td>
-                            <form action="<?= base_url('candidates/vote/' . $candidate['kadidat_id']); ?>" method="post">
-                                <button type="submit" class="vote-btn">Vote</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
+                        <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nama</th>
+                    <th>Biografi</th>
+                    <th>Suara</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($candidates as $candidate): ?>
+                <tr>
+                    <td>
+                        <?php if (!empty($candidate['photo'])): ?>
+                            <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" alt="Foto Kandidat" class="candidate-photo">
+                        <?php else: ?>
+                            <img src="<?= base_url('uploads/default.png') ?>" alt="Foto Default" class="candidate-photo">
+                        <?php endif; ?>
+                    </td>
+                    <td><?= esc($candidate['nama']); ?></td>
+                    <td><?= esc($candidate['bio']); ?></td>
+                    <td><?= esc($candidate['vote']); ?></td>
+                    <td>
+                        <form action="<?= base_url('candidates/vote/' . $candidate['kadidat_id']); ?>" method="post">
+                            <button type="submit" class="vote-btn">Vote</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+
             </table>
         <?php endif; ?>
 

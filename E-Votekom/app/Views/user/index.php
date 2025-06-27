@@ -42,19 +42,20 @@
         <?php endif; ?>
 
         <div class="candidates">
+          
           <?php foreach ($candidates as $candidate): ?>
-            <div class="candidate-card">
-            <td>
-                    <?php if (!empty($candidate['photo'])): ?>
-                        <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" width="100" alt="Candidate Photo">
-                    <?php else: ?>
-                        <img src="<?= base_url('uploads/default.png') ?>" width="100" alt="Default Photo"> <!-- Default image if no photo -->
-                    <?php endif; ?>
-              <h3><?= esc($candidate['nama']) ?></h3>
-              <form action="<?= base_url('Candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
-                <button class="vote-btn" type="submit">Vote</button>
-              </form>
-            </div>
+              <div class="candidate-card">
+                <?php if (!empty($candidate['photo'])): ?>
+                  <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" alt="Candidate Photo" class="candidate-photo">
+                <?php endif; ?>
+                
+                <h3><?= esc($candidate['nama']) ?></h3>
+                <form action="<?= base_url('Candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
+                  <button class="vote-btn" type="submit">Vote</button>
+                </form>
+              </div>
+
+
           <?php endforeach; ?>
         </div>
       </div>

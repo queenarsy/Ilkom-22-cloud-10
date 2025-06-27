@@ -135,12 +135,12 @@ class  CandidateController extends BaseController
             $session = session();
             $userRole = $session->get('role'); // Assuming you store user role in session
     
-            if ($userRole === 'Admin') {
+            if ($userRole === 'User') {
                 session()->setFlashdata('message', 'Vote successfully cast!');
-                return redirect()->to('candidates/indexx');
+                return redirect()->to('candidates/index');
             } else {
                 session()->setFlashdata('message', 'Vote successfully cast!');
-                return redirect()->to('candidates/indexx');
+                return redirect()->to('user/index');
             }
         } else {
             return redirect()->to('candidates/index')->with('error', 'Candidate not found.');
