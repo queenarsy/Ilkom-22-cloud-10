@@ -137,13 +137,13 @@ class  CandidateController extends BaseController
     
             if ($userRole === 'User') {
                 session()->setFlashdata('message', 'Vote successfully cast!');
-                return redirect()->to('candidates/index');
+                return redirect()->to('user/index');
             } else {
                 session()->setFlashdata('message', 'Vote successfully cast!');
                 return redirect()->to('user/index');
             }
         } else {
-            return redirect()->to('candidates/index')->with('error', 'Candidate not found.');
+            return redirect()->to('user/index')->with('error', 'Candidate not found.');
         }
     }
 
