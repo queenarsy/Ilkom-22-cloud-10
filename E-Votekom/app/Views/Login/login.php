@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <img src="<?= base_url('image/Evotkom.png'); ?>" alt="Gambar Samping Login" class="login-image">
+    <img src="<?= base_url('image/MIPAVOTE.png'); ?>" alt="Gambar Samping Login" class="login-image">
     <h4>Connect Together</h4>
 
     <div class="wrapper">
@@ -25,17 +25,6 @@
                 <i class='bx bx-lock'></i>
             </div>
             <button type="submit" class="btn">Masuk</button>
-
-            <!-- Tautan WhatsApp dengan ikon dan isi chat otomatis -->
-                    <p style="text-align: center; margin-top: 20px;">
-                    Belum terdaftar sebagai kandidat? Hubungi Admin via
-                    <br>
-                    <a href="https://wa.me/6281231284607?text=Halo%20Admin%2C%20saya%20ingin%20daftar%20kandidat" 
-                    target="_blank" 
-                    style="color: #25D366; font-weight: bold; text-decoration: none;">
-                        <i class="bi bi-whatsapp"></i> Admin kontak personal
-                    </a>
-                    </p>
 
         </form>
     </div>

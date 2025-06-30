@@ -41,12 +41,12 @@ h4 {
     padding-bottom: 2%;
 }
 .login-image {
-    size: 100px;
+    size: 500px;
     position: absolute;
-    top: 15%;
+    top: 25%;
     right: 100; /* Mengatur posisi ke samping */
     transform: translateY(-50%);
-    width: 100px; /* Sesuaikan lebar gambar */
+    width: 300px; /* Sesuaikan lebar gambar */
     height: auto; /* Biarkan tinggi gambar menyesuaikan proporsi */
   
 }

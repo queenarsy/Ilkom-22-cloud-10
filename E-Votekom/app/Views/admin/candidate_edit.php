@@ -8,6 +8,27 @@
 
 <h1>Edit Candidate</h1>
 
+// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login
+// Ini adalah komentar untuk menjelaskan fungsi login// Ini adalah komentar untuk menjelaskan fungsi login
+
+
+// Ini adalah komentar untuk menjelaskan fungsi login
+
 <a href="<?= base_url('admin/candidate_list') ?>">Back to Candidate List</a>
 
 <?php if(session()->getFlashdata('success')): ?>
