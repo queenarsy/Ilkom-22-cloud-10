@@ -13,6 +13,7 @@ class Pengguna extends BaseController
 
         // Membuat instance dari model UserModel untuk mengakses data pengguna
         $userModel = new UserModel();
+        // Mengambil data pengguna berdasarkan ID pengguna yang diberikan
         $user = $userModel->find($userId);
 
         return view('pengguna/profil', ['user' => $user]);
