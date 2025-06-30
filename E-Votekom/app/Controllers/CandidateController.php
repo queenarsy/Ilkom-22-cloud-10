@@ -67,7 +67,7 @@ class  CandidateController extends BaseController
         $candidate = $this->candidateModel->find($id);
         
         if (!$candidate) {
-            session()->setFlashdata('error', 'Candidate not found.');
+            session()->setFlashdata('error', 'Candidate not found.'); //perulangan jika eror 
             return redirect()->to('admin/candidate_list');
         }
 
