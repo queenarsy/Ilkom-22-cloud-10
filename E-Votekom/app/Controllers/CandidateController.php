@@ -24,7 +24,7 @@ class  CandidateController extends BaseController
 
 
     public function create(){
-        return view('admin\create_candidate.php');
+        return view('admin\create_candidate.php');//mengembalikan  create_candidate di view
     }
 
     public function candidateList(){
