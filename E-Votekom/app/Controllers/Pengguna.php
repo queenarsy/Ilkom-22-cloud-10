@@ -48,6 +48,6 @@ class Pengguna extends BaseController
             'password' => password_hash($this->request->getPost('password_baru'), PASSWORD_DEFAULT)//hash password
         ]);
 
-        return redirect()->back()->with('success', 'Password berhasil diubah.');
+        return redirect()->back()->with('success', 'Password berhasil diubah.'); //megembalikan sukses jika pass berhasilmd ubah
     }
 }
