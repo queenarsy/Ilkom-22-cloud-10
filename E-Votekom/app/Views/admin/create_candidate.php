@@ -9,7 +9,7 @@
 <body>
 
 <div class="logo-container">
-    <img src="<?= base_url('image/Evotkom.png') ?>" alt="Logo" class="logo">
+    <img src="<?= base_url('image/MIPAVOTE.png') ?>" alt="Logo" class="logo">
 </div>
 
 <div class="form-wrapper">
