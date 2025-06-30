@@ -41,7 +41,7 @@ class Pengguna extends BaseController
         $user = $userModel->find($userId);
 
         if (!password_verify($this->request->getPost('password_lama'), $user['password'])) {
-            return redirect()->back()->with('error', 'Password lama tidak cocok.');
+            return redirect()->back()->with('error', 'Password lama tidak cocok.'); //pemberitahuan jika eror
         }
 
         $userModel->update($userId, [
