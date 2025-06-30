@@ -41,7 +41,7 @@ class  CandidateController extends BaseController
         $validation->setRules([
             'nama' => 'required', //requuired nama
             'bio' => 'required', //required biodaata
-            'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]'
+            'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]' //requered foto
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
