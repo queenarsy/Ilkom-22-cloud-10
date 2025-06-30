@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class CandidateModel extends Model
 {
-    protected $table = 'kadidat'; // Ganti nama tabelmu
+    protected $table = 'kadidat'; // ganti nama tabelmu
     protected $primaryKey = 'kadidat_id'; //Kandidat ID
     protected $allowedFields = ['nama', 'bio', 'photo', 'vote'];
 }
