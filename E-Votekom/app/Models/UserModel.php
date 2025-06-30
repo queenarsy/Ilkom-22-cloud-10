@@ -12,7 +12,7 @@ class UserModel extends Model
 
     public function getUser ($username)
     {
-        return $this->where('username', $username)->first(); //cari username
+        return $this->where('username', $username)->first(); //Cari username
     }
     
    
