@@ -12,7 +12,7 @@ class PollModel extends Model
 
     public function getPolls()
     {
-        return $this->findAll(); //fungsi untuk menemukan semua polling
+        return $this->findAll(); //Fungsi untuk menemukan semua polling
     }
 
     public function getPoll($id)
