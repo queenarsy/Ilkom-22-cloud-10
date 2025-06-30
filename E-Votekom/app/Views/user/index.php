@@ -9,9 +9,10 @@
 </head>
 
 <body>
+  <!-- SIDEBAR -->
   <div class="sidebar">
-    <div class="logo">
-      <img src="<?= base_url('image/logo.png') ?>" alt="Logo" />
+    <div class="logo-container">
+      <img src="<?= base_url('image/MIPAVOTEW.png'); ?>" alt="Logo" class="sidebar-logo" />
     </div>
 
     <ul>
@@ -19,16 +20,18 @@
       <li><a href="#visiMisi">Visi Misi Kandidat</a></li>
       <li><a href="#hasilVoting">Hasil Voting</a></li>
       <li><a href="<?= base_url('pengguna/profil'); ?>">Pengaturan</a></li>
-      <li> <a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a></li>
+      <li><a href="<?= base_url('Auth/logout'); ?>" class="btn logout">Logout</a></li>
     </ul>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="main">
-
+    
     <!-- Kandidat -->
     <section id="kandidat" class="section">
       <div class="section-wrapper">
         <h1>Daftar Kandidat</h1>
+
         <?php if (session()->getFlashdata('message')): ?>
           <div class="alert success">
             <?= session()->getFlashdata('message') ?>
@@ -42,26 +45,23 @@
         <?php endif; ?>
 
         <div class="candidates">
-          
           <?php foreach ($candidates as $candidate): ?>
-              <div class="candidate-card">
-                <?php if (!empty($candidate['photo'])): ?>
-                  <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" alt="Candidate Photo" class="candidate-photo">
-                <?php endif; ?>
-                
-                <h3><?= esc($candidate['nama']) ?></h3>
-                <form action="<?= base_url('Candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
-                  <button class="vote-btn" type="submit">Vote</button>
-                </form>
-              </div>
+            <div class="candidate-card">
+              <?php if (!empty($candidate['photo'])): ?>
+                <img src="<?= base_url('uploads/' . $candidate['photo']) ?>" alt="Candidate Photo" class="candidate-photo">
+              <?php endif; ?>
 
-
+              <h3><?= esc($candidate['nama']) ?></h3>
+              <form action="<?= base_url('Candidates/vote/' . $candidate['kadidat_id']) ?>" method="post">
+                <button class="vote-btn" type="submit">Vote</button>
+              </form>
+            </div>
           <?php endforeach; ?>
         </div>
       </div>
     </section>
 
-    <!-- Visi Misi Kandidat -->
+    <!-- Visi Misi -->
     <section id="visiMisi" class="section">
       <div class="section-wrapper">
         <h1>Visi Misi Kandidat</h1>
@@ -89,14 +89,14 @@
     <!-- Pengaturan -->
     <section id="pengaturan" class="section">
       <div class="section-wrapper">
-        <h1>Terimakasih Telah Berpartisipasi</h1>
-        <p>Suara Anda Sangat Berharga Bagi Kami.</p>
+        <h1>Terima Kasih Telah Berpartisipasi</h1>
+        <p>Suara Anda sangat berharga bagi kami.</p>
       </div>
     </section>
 
   </div>
 
-  <!-- Script ChartJS -->
+  <!-- ChartJS Script -->
   <script>
     const labels = <?= json_encode(array_column($candidates, 'nama')) ?>;
     const data = <?= json_encode(array_column($candidates, 'vote')) ?>;

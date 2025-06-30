@@ -18,17 +18,18 @@ body {
     position: relative;
 }
 
-/* Logo kiri atas */
+/* Logo center atas */
 .logo-container {
     position: absolute;
-    top: -60px;
-    left: center;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .logo {
     width: 200px;
     height: auto;
-
 }
 
 /* Form container */
@@ -87,14 +88,14 @@ body {
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #007bff;
+    border-color: #000;
 }
 
-/* Button */
+/* Button - Hitam elegan */
 .btn {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #000;
     border: none;
     border-radius: 8px;
     color: white;
@@ -105,9 +106,10 @@ body {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #333;
 }
 
+/* Alerts */
 .alert {
     padding: 10px;
     margin: 15px 0;
@@ -128,10 +130,27 @@ body {
     border: 1px solid #f5c6cb;
 }
 
+/* Candidate Photo */
 .candidate-photo {
     width: 100px;
     height: 100px;
+    max-height: 100px;
     object-fit: cover;
     border-radius: 10px;
 }
 
+/* Responsive */
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .candidate-photo {
+        width: 80px;
+        height: 80px;
+    }
+}

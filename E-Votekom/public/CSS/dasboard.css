@@ -42,7 +42,7 @@ p {
     color: #222;
 }
 
-/* Tombol utama */
+/* Tombol utama hitam */
 a.btn {
     display: block;
     width: 100%;
@@ -50,7 +50,7 @@ a.btn {
     padding: 12px;
     font-size: 16px;
     text-align: center;
-    background-color: #007bff;
+    background-color: #000;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -58,7 +58,7 @@ a.btn {
 }
 
 a.btn:hover {
-    background-color: #0056b3;
+    background-color: #333;
 }
 
 /* Tombol logout (warna berbeda) */
@@ -80,6 +80,7 @@ a.logout:hover {
 }
 
 .logo {
-    width: 500px;
+    width: 300px;
     height: auto;
+    margin-top: 50px;
 }
