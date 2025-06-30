@@ -45,7 +45,7 @@ class Pengguna extends BaseController
         }
 
         $userModel->update($userId, [
-            'password' => password_hash($this->request->getPost('password_baru'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->request->getPost('password_baru'), PASSWORD_DEFAULT)//hash password
         ]);
 
         return redirect()->back()->with('success', 'Password berhasil diubah.');
