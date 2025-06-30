@@ -39,7 +39,7 @@ class  CandidateController extends BaseController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'nama' => 'required',
+            'nama' => 'required', //requuired nama
             'bio' => 'required',
             'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]'
         ]);
