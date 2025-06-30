@@ -20,7 +20,7 @@ class PollModel extends Model
         return $this->find($id); //Fungsi cara
     }
 
-    public function createPoll($data) //Fungsi buat data
+    public function createPoll($data) //fungsi buat data
     {
         return $this->insert($data); //fungsi menambah data
     }
