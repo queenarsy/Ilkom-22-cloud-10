@@ -2,4 +2,4 @@
 
 
 
-// wija
+// sistem informasi
