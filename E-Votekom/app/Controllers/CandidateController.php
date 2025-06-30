@@ -110,6 +110,7 @@ class  CandidateController extends BaseController
         if ($existingVote) {
             session()->setFlashdata('error', 'You have already voted. You cannot vote for another candidate.');
             return redirect()->to('/user/index');
+            //intan
         }
     
         // Proceed with the voting process
