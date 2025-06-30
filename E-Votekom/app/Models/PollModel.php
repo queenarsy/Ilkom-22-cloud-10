@@ -22,6 +22,6 @@ class PollModel extends Model
 
     public function createPoll($data)
     {
-        return $this->insert($data);
+        return $this->insert($data); //fungsi menambah data
     }
 }
