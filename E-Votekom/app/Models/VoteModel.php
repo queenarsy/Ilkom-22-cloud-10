@@ -15,7 +15,7 @@ class VoteModel extends Model
         return $this->where('user_id', $userId)->findAll();
     }
 
-    public function createVote($data)
+    public function createVote($data) //fungsi buat vote
     {
         return $this->insert($data);
     }

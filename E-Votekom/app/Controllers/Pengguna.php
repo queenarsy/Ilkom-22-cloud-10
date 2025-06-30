@@ -11,7 +11,9 @@ class Pengguna extends BaseController
         $session = session();
         $userId = $session->get('user_id'); // pastikan Anda menyimpan 'id' saat login
 
+        // Membuat instance dari model UserModel untuk mengakses data pengguna
         $userModel = new UserModel();
+        // Mengambil data pengguna berdasarkan ID pengguna yang diberikan
         $user = $userModel->find($userId);
 
         return view('pengguna/profil', ['user' => $user]);
@@ -28,6 +30,8 @@ class Pengguna extends BaseController
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            // Mengembalikan user ke halaman sebelumnya dengan input yang sudah diisi sebelumnya
+
         }
 
         $session = session();
@@ -37,13 +41,13 @@ class Pengguna extends BaseController
         $user = $userModel->find($userId);
 
         if (!password_verify($this->request->getPost('password_lama'), $user['password'])) {
-            return redirect()->back()->with('error', 'Password lama tidak cocok.');
+            return redirect()->back()->with('error', 'Password lama tidak cocok.'); //pemberitahuan jika eror
         }
 
         $userModel->update($userId, [
-            'password' => password_hash($this->request->getPost('password_baru'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->request->getPost('password_baru'), PASSWORD_DEFAULT)//hash password
         ]);
 
-        return redirect()->back()->with('success', 'Password berhasil diubah.');
+        return redirect()->back()->with('success', 'Password berhasil diubah.'); //megembalikan sukses jika pass berhasilmd ubah
     }
 }

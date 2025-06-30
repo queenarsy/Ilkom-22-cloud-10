@@ -24,7 +24,7 @@ class  CandidateController extends BaseController
 
 
     public function create(){
-        return view('admin\create_candidate.php');
+        return view('admin\create_candidate.php');//mengembalikan  create_candidate di view
     }
 
     public function candidateList(){
@@ -39,9 +39,9 @@ class  CandidateController extends BaseController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'nama' => 'required',
-            'bio' => 'required',
-            'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]'
+            'nama' => 'required', //requuired nama
+            'bio' => 'required', //required biodaata
+            'photo' => 'uploaded[photo]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]' //requered foto
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -49,7 +49,7 @@ class  CandidateController extends BaseController
         }
 
         $photo = $this->request->getFile('photo');
-        $photoName = $photo->getRandomName();
+        $photoName = $photo->getRandomName(); //mengammbil nama randomm
         $photo->move('uploads/', $photoName);
 
         $this->candidateModel->save([
@@ -59,7 +59,7 @@ class  CandidateController extends BaseController
             'vote' => 0
         ]);
 
-        return redirect()->to('admin/candidate_list')->with('success', 'Candidate created successfully.');
+        return redirect()->to('admin/candidate_list')->with('success', 'Candidate created successfully.'); //megembalikan ke candidate list jila sukses membuat candidate
     }
 
     public function edit($id)
@@ -67,7 +67,7 @@ class  CandidateController extends BaseController
         $candidate = $this->candidateModel->find($id);
         
         if (!$candidate) {
-            session()->setFlashdata('error', 'Candidate not found.');
+            session()->setFlashdata('error', 'Candidate not found.'); //perulangan jika eror 
             return redirect()->to('admin/candidate_list');
         }
 
@@ -110,6 +110,7 @@ class  CandidateController extends BaseController
         if ($existingVote) {
             session()->setFlashdata('error', 'You have already voted. You cannot vote for another candidate.');
             return redirect()->to('/user/index');
+            //intan
         }
     
         // Proceed with the voting process
