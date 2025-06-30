@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PollModel extends Model
 {
     protected $table = 'polls';
-    protected $primaryKey = 'polls_id'; //Kunci Utama
+    protected $primaryKey = 'polls_id'; //kunci Utama
     protected $allowedFields = ['question', 'created_at'];
 
     public function getPolls()
