@@ -59,7 +59,7 @@ class  CandidateController extends BaseController
             'vote' => 0
         ]);
 
-        return redirect()->to('admin/candidate_list')->with('success', 'Candidate created successfully.');
+        return redirect()->to('admin/candidate_list')->with('success', 'Candidate created successfully.'); //megembalikan ke candidate list jila sukses membuat candidate
     }
 
     public function edit($id)
