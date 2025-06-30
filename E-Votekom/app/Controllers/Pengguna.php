@@ -11,6 +11,7 @@ class Pengguna extends BaseController
         $session = session();
         $userId = $session->get('user_id'); // pastikan Anda menyimpan 'id' saat login
 
+        // Membuat instance dari model UserModel untuk mengakses data pengguna
         $userModel = new UserModel();
         $user = $userModel->find($userId);
 
