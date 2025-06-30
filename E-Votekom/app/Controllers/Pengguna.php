@@ -30,6 +30,8 @@ class Pengguna extends BaseController
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            // Mengembalikan user ke halaman sebelumnya dengan input yang sudah diisi sebelumnya
+
         }
 
         $session = session();
