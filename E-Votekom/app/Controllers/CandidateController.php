@@ -49,7 +49,7 @@ class  CandidateController extends BaseController
         }
 
         $photo = $this->request->getFile('photo');
-        $photoName = $photo->getRandomName();
+        $photoName = $photo->getRandomName(); //mengammbil nama randomm
         $photo->move('uploads/', $photoName);
 
         $this->candidateModel->save([
