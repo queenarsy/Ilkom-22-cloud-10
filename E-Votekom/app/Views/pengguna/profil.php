@@ -3,68 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>Profil Pengguna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
-      max-width: 500px;
-      margin: 50px auto;
-      padding: 30px;
+      max-width: 480px;
+      width: 100%;
       background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    h2, h3 {
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
       color: #333;
-      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 25px 0 15px;
+      color: #333;
     }
 
     p {
       font-size: 16px;
+      margin-bottom: 5px;
       color: #444;
     }
 
     label {
       font-weight: 500;
+      margin: 10px 0 6px;
       display: block;
-      margin: 10px 0 5px;
+      color: #222;
     }
 
     input[type="password"] {
       width: 100%;
-      padding: 8px;
-      border-radius: 6px;
+      padding: 10px 12px;
       border: 1px solid #ccc;
-      margin-bottom: 10px;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 12px;
+      background-color: #fdfdfd;
     }
 
     button {
-      background-color: #007BFF;
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
       color: white;
       border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: #222;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
       background-color: #6c757d;
       color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 10px 14px;
       text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 15px;
+      text-align: center;
     }
 
     .btn:hover {
@@ -72,23 +102,28 @@
     }
 
     .bottom-actions {
+      text-align: center;
       margin-top: 20px;
     }
 
     .flash-message {
-      padding: 10px;
-      border-radius: 6px;
-      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 14px;
     }
 
     .flash-message.success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
     }
 
     .flash-message.error {
       background-color: #f8d7da;
       color: #721c24;
+      border: 1px solid #f5c6cb;
     }
 
     ul {
@@ -97,6 +132,13 @@
 
     li {
       font-size: 14px;
+      color: #444;
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        padding: 25px 20px;
+      }
     }
   </style>
 </head>
@@ -125,13 +167,13 @@
 
     <form method="post" action="<?= base_url('pengguna/ubahPassword') ?>">
       <?= csrf_field() ?>
-      <label>Password Lama:</label>
+      <label>Password Lama</label>
       <input type="password" name="password_lama" required>
 
-      <label>Password Baru:</label>
+      <label>Password Baru</label>
       <input type="password" name="password_baru" required>
 
-      <label>Konfirmasi Password Baru:</label>
+      <label>Konfirmasi Password Baru</label>
       <input type="password" name="konfirmasi_password" required>
 
       <button type="submit">Ubah Password</button>
