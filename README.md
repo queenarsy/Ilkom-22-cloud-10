@@ -2,4 +2,4 @@
 
 
 
-// sistem informasi
+// hacker
