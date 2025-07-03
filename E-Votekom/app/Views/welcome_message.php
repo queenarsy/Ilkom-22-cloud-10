@@ -32,12 +32,12 @@
             padding: .4rem 0 0;
         }
         .menu {
-            padding: .4rem 2rem;
-        }
+            padding: .4rem 2rem; //paddingnya
+        } 
         header ul {
             border-bottom: 1px solid rgba(242, 242, 242, 1);
             list-style-type: none;
-            margin: 0;
+            margin: 0; //rules
             overflow: hidden;
             padding: 0;
             text-align: right;
