@@ -28,7 +28,7 @@
             text-rendering: optimizeLegibility;
         }
         header {
-            background-color: rgba(247, 248, 249, 1);
+            background-color: rgba(247, 248, 249, 1); //pewarnaaan
             padding: .4rem 0 0;
         }
         .menu {
